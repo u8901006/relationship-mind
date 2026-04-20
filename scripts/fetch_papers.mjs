@@ -48,27 +48,43 @@ function saveSeenPmids(seen) {
   writeFileSync(path, JSON.stringify([...seen], null, 2), "utf-8");
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 async function pubmedSearch(query, retmax = 40) {
-  const url = `${PUBMED_SEARCH}?db=pubmed&term=${encodeURIComponent(query)}&retmax=${retmax}&sort=date&retmode=json`;
-  const resp = await fetch(url, {
-    headers: { "User-Agent": "RelationshipMindBot/1.0 (research aggregator)" },
-    signal: AbortSignal.timeout(30000),
-  });
-  if (!resp.ok) throw new Error(`PubMed search HTTP ${resp.status}`);
-  const data = await resp.json();
-  return data?.esearchresult?.idlist || [];
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const url = `${PUBMED_SEARCH}?db=pubmed&term=${encodeURIComponent(query)}&retmax=${retmax}&sort=date&retmode=json`;
+    const resp = await fetch(url, {
+      headers: { "User-Agent": "RelationshipMindBot/1.0 (research aggregator)" },
+      signal: AbortSignal.timeout(30000),
+    });
+    if (resp.status === 429) {
+      await sleep(5000 * (attempt + 1));
+      continue;
+    }
+    if (!resp.ok) throw new Error(`PubMed search HTTP ${resp.status}`);
+    const data = await resp.json();
+    return data?.esearchresult?.idlist || [];
+  }
+  throw new Error("PubMed search rate limited after retries");
 }
 
 async function pubmedFetch(pmids) {
   if (!pmids.length) return [];
-  const url = `${PUBMED_FETCH}?db=pubmed&id=${pmids.join(",")}&retmode=xml`;
-  const resp = await fetch(url, {
-    headers: { "User-Agent": "RelationshipMindBot/1.0 (research aggregator)" },
-    signal: AbortSignal.timeout(60000),
-  });
-  if (!resp.ok) throw new Error(`PubMed fetch HTTP ${resp.status}`);
-  const xml = await resp.text();
-  return parseXml(xml);
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const url = `${PUBMED_FETCH}?db=pubmed&id=${pmids.join(",")}&retmode=xml`;
+    const resp = await fetch(url, {
+      headers: { "User-Agent": "RelationshipMindBot/1.0 (research aggregator)" },
+      signal: AbortSignal.timeout(60000),
+    });
+    if (resp.status === 429) {
+      await sleep(5000 * (attempt + 1));
+      continue;
+    }
+    if (!resp.ok) throw new Error(`PubMed fetch HTTP ${resp.status}`);
+    const xml = await resp.text();
+    return parseXml(xml);
+  }
+  throw new Error("PubMed fetch rate limited after retries");
 }
 
 function parseXml(xml) {
@@ -143,14 +159,16 @@ async function main() {
   console.error(`[INFO] Already seen PMIDs: ${seenPmids.size}`);
 
   const allPmids = new Set();
-  for (const template of SEARCH_TEMPLATES) {
+  for (let i = 0; i < SEARCH_TEMPLATES.length; i++) {
+    const template = SEARCH_TEMPLATES[i];
     const query = `(${template}) AND ${dateFilter}`;
     try {
       const ids = await pubmedSearch(query, Math.ceil(maxPapers / SEARCH_TEMPLATES.length) + 5);
       for (const id of ids) allPmids.add(id);
     } catch (e) {
-      console.error(`[WARN] Search template failed: ${e.message}`);
+      console.error(`[WARN] Search template ${i + 1} failed: ${e.message}`);
     }
+    if (i < SEARCH_TEMPLATES.length - 1) await sleep(1500);
   }
 
   const newPmids = [...allPmids].filter((id) => !seenPmids.has(id));
