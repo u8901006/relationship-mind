@@ -82,14 +82,6 @@ jobs:
           git pull --rebase origin main
           git push
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          publish_branch: gh-pages
-          force_orphan: true
-
       - name: Summary
         run: |
           echo "### 💑 Relationship Mind Daily Report" >> $GITHUB_STEP_SUMMARY
