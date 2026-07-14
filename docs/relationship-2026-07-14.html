@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Relationship Mind &middot; 關係與婚姻研究日報 &middot; 2026年7月14日</title>
+<meta name="description" content="2026年7月14日 關係與婚姻研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .footer-links { margin-top: 48px; animation: fadeUp 0.5s ease 0.4s both; }
+  .footer-link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); margin-bottom: 12px; }
+  .footer-link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .footer-icon { font-size: 28px; flex-shrink: 0; }
+  .footer-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .footer-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">💑</div>
+    <div class="header-text">
+      <h1>Relationship Mind &middot; 關係與婚姻研究日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年7月14日</span>
+        <span class="badge badge-count">📊 10 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻亮點聚焦於「伴侶互動的微觀行為如何影響關係走向」，從衝突中的驗證行為到黑暗三人格的雙向影響，顯示關係治療正朝向更具體的行為機制與文化適應介入發展。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div><div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#1</span>
+    <span class="emoji-icon">🤝</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>伴侶衝突中的夥伴驗證預測負面情緒減少與更好的育兒心理社會適應</h3>
+  <p class="journal-source">Journal of Family Psychology &middot; Partner validation during couple conflict predicts reduced negative affect and better psychosocial adjustment to parenthood.</p>
+  <p>研究發現懷孕期間衝突對話中的「驗證行為」（承認、表達興趣、真誠理解）能促進伴侶從負面情緒轉向中性或正向狀態，並預測產後更高的關係品質與更低的育兒壓力。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">93對準父母伴侶</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">衝突對話中的夥伴驗證行為（承認、興趣、真誠理解）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">缺乏驗證的互動模式</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">負面情緒減少、產後關係品質提升、男性育兒壓力降低</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">共調節</span><span class="tag">伴侶溝通</span><span class="tag">衝突修復</span><span class="tag">情緒調節</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42441643/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#2</span>
+    <span class="emoji-icon">🔄</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>共同演化：對抗性與自我中心特質與伴侶關係的動態交易</h3>
+  <p class="journal-source">Journal of Personality and Social Psychology &middot; Evolving together: Dynamic transactions of antagonistic and self-centered traits with couple relationships.</p>
+  <p>針對1,925對伴侶的三年追蹤研究證實，馬基維利主義、精神病態與自戀特質與關係滿意度、承諾、言語攻擊存在雙向影響，且自戀特質的關聯最為一致穩定。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">1,925對伴侶（平均年齡約36歲）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">對抗性/自我中心人格特質的變化（馬基維利主義、精神病態、自戀）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">低水準的這些人格特質</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">關係滿意度、承諾、互惠取向、言語攻擊的變化</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">關係品質</span><span class="tag">信任與承諾</span><span class="tag">伴侶溝通</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42441603/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#3</span>
+    <span class="emoji-icon">🌍</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>伴侶學習計畫在土耳其年輕伴侶中的文化適應與試點評估：混合方法研究</h3>
+  <p class="journal-source">Acta Psychologica &middot; Cultural adaptation and pilot evaluation of the Couple Learning Program (CLP) among young Turkish couples: A mixed-method study.</p>
+  <p>隨機對照試驗顯示，文化適應後的伴侶學習計畫能顯著改善土耳其婚前伴侶的衝突解決策略，且在追蹤期才出現關係滿意度的顯著提升，參與者零流失率顯示高接受度。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">8對土耳其婚前伴侶</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">文化適應後的伴侶學習計畫（六次課程）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">等候控制組</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">溝通技巧、衝突解決策略（退出、發聲、忽視）、關係滿意度</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">關係教育</span><span class="tag">伴侶溝通</span><span class="tag">衝突修復</span><span class="tag">關係品質</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42442188/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#4</span>
+    <span class="emoji-icon">👶</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>父母產後憂鬱症的盛行率、影響因素及同理心的調節角色</h3>
+  <p class="journal-source">Journal of Reproductive and Infant Psychology &middot; Prevalence, influencing factors of postpartum depression among parents and the moderating role of empathy.</p>
+  <p>追蹤325對父母發現，母親產後憂鬱症狀從產後3天的28.3%升至6-8週的42.1%，而父親則從25.5%降至17.8%，且父親的「幻想」同理心維度會加強母親憂鬱對父親憂鬱的傳遞效應。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">325對父母-嬰兒雙人組</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">同理心維度（特別是幻想維度）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">低同理心水準</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">產後憂鬱症狀的雙人傳遞強度</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">同理心</span><span class="tag">壓力與韌性</span><span class="tag">婚姻滿意度</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42439714/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#5</span>
+    <span class="emoji-icon">📝</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>對婚前婚姻合約的態度與意圖</h3>
+  <p class="journal-source">Law and Human Behavior &middot; Attitudes and intentions toward prenuptial marriage contracts.</p>
+  <p>兩項研究發現，個人特質（年齡、教育、依附風格）與關係特質對婚前協議態度的預測力很弱，但對合約的信念（如「不浪漫」）卻是強烈預測因子，且簡單的資訊介入即可有效改變態度。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">有浪漫關係的線上樣本（研究一：M=30歲；研究二：M=44歲）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">閱讀關於婚前協議的新聞文章</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">閱讀無關主題的文章</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">對婚前協議的態度與簽署意圖</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">離婚與分居</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42441595/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#6</span>
+    <span class="emoji-icon">🧘</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>正念在減輕日常負面事件不良影響中的角色：經驗取樣研究</h3>
+  <p class="journal-source">Emotion &middot; The role of mindfulness in attenuating the adverse effects of daily negative events: An experience sampling study.</p>
+  <p>針對100對同居伴侶的16天經驗取樣研究發現，狀態正念主要呈現主效應（提升女性正向情緒、降低心率），而非緩衝效應，但更精細的正念測量則顯示其在男性面對負面事件時具有保護作用。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">100對同居伴侶（200人）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">狀態正念水準</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">低狀態正念水準</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">正向情緒、負向情緒、心率</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">情緒調節</span><span class="tag">壓力與韌性</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41556895/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#7</span>
+    <span class="emoji-icon">🙏</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>宗教信仰與性：個人與伴侶雙層面的探討</h3>
+  <p class="journal-source">Journal of Family Psychology &middot; Religiosity and sexuality: A person- and couple-based approach.</p>
+  <p>潛在類型分析發現，高宗教信仰伴侶的性滿意度取決於「性神聖化」與「負面性態度（內疚、壓抑熱情）」的組合，呈現「高神聖化／無內疚」與「高神聖化／有內疚」等不同類型，後者性結果較為混合。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">三個樣本共計3,791名個體及481對伴侶</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">非神聖性性神聖化與負面性態度的不同組合類型</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同的潛在類型間比較</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">性滿意度、性慾、性頻率、高潮一致性</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">性親密</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42441642/" target="_blank">閱讀原文 →</a>
+  </div>
+</div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div><div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">📦</span>
+    <span class="utility-low utility-sm">低</span>
+  </div>
+  <h3>婚姻早期的住宅搬遷：壓力源還是常規轉變？</h3>
+  <p class="journal-source">Journal of Family Psychology</p>
+  <p>針對662對低收入新婚夫妻的追蹤研究發現，搬遷並未對婚姻滿意度造成負面影響，支持將其視為夫妻通常能良好應對的常規轉變。</p>
+  <div class="card-footer">
+    <span class="tag">壓力與韌性</span><span class="tag">婚姻滿意度</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42441639/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">♀️</span>
+    <span class="utility-low utility-sm">低</span>
+  </div>
+  <h3>捕捉女性身體經驗：女性身體經驗量表的構想與形成階段</h3>
+  <p class="journal-source">PLOS ONE</p>
+  <p>開發包含73個項目與13個因子的女性身體經驗量表，區分出9個不愉快因子與4個愉快因子，為理解女性身體經驗提供全面性評估工具。</p>
+  <div class="card-footer">
+    <span class="tag">身體親密</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42441631/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">⚡</span>
+    <span class="utility-low utility-sm">低</span>
+  </div>
+  <h3>磁積分變壓器型可控電抗器的設計優化與電磁性能研究</h3>
+  <p class="journal-source">Scientific Reports</p>
+  <p>本研究提出一種整合電壓變換與電感調節的五肢電磁結構可控電抗器，與傳統設計相比可降低18.6%鐵芯損耗與52.1%電流諧波失真。</p>
+  <div class="card-footer">
+    
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42443278/" target="_blank">PubMed →</a>
+  </div>
+</div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div><div class="topic-row">
+  <span class="topic-name">共調節</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">伴侶溝通</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">3</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">衝突修復</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">關係品質</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">關係教育</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">壓力與韌性</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">情緒調節</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">婚姻滿意度</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">同理心</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">性滿意度</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">離婚與分居</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">信任與承諾</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">身體親密</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">共調節</span><span class="keyword">衝突驗證</span><span class="keyword">黑暗三人格</span><span class="keyword">關係教育</span><span class="keyword">產後憂鬱</span><span class="keyword">雙人傳遞</span><span class="keyword">文化適應</span><span class="keyword">婚前協議</span><span class="keyword">狀態正念</span><span class="keyword">宗教與性</span></div></div>
+
+  <div class="footer-links">
+    <a href="https://www.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">🏥</span>
+      <span class="footer-name">李政洋身心診所首頁</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">📬</span>
+      <span class="footer-name">訂閱電子報</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="footer-link-card" target="_blank">
+      <span class="footer-icon">☕</span>
+      <span class="footer-name">Buy Me a Coffee</span>
+      <span class="footer-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：GLM-5-Turbo</span>
+    <span><a href="https://github.com/u8901006/relationship-mind">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
