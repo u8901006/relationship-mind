@@ -11,7 +11,7 @@
 ## 技術架構
 
 - **文獻來源**: PubMed E-utilities API
-- **AI 分析**: GLM-5-Turbo（fallback: GLM-4.7 → GLM-4.7-Flash）
+- **AI 分析**: NVIDIA Nemotron 3 Super 120B（fallback: NVIDIA Nemotron 3 Nano 30B）
 - **前端**: 純 HTML/CSS（與 Psychiatry-brain 相同配色）
 - **部署**: GitHub Pages
 - **CI/CD**: GitHub Actions（每日台北時間 12:00 執行）

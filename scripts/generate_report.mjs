@@ -5,9 +5,9 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
-const API_BASE = process.env.ZHIPU_API_BASE || "https://open.bigmodel.cn/api/coding/paas/v4";
-const MODELS = ["GLM-5-Turbo", "GLM-4.7", "GLM-4.7-Flash"];
-const MAX_TOKENS = 100000;
+const API_BASE = process.env.NVIDIA_API_BASE || "https://integrate.api.nvidia.com/v1";
+const MODELS = ["nvidia/nemotron-3-super-120b-a12b", "nvidia/nemotron-3-nano-30b-a3b"];
+const MAX_TOKENS = 16384;
 const TIMEOUT_MS = 660_000;
 const MAX_RETRIES = 3;
 
@@ -67,7 +67,7 @@ function robustJsonParse(text) {
   throw new Error("JSON parse failed after all recovery attempts");
 }
 
-async function callZhipuAPI(apiKey, papersData) {
+async function callNvidiaAPI(apiKey, papersData) {
   const dateStr = papersData.date;
   const papersText = JSON.stringify(papersData.papers, null, 2);
   const paperCount = papersData.count;
@@ -143,9 +143,11 @@ ${papersText}
               { role: "system", content: SYSTEM_PROMPT },
               { role: "user", content: prompt },
             ],
-            temperature: 0.3,
-            top_p: 0.9,
+            temperature: 1.0,
+            top_p: 0.95,
             max_tokens: MAX_TOKENS,
+            stream: false,
+            chat_template_kwargs: { enable_thinking: false },
           }),
           signal: AbortSignal.timeout(TIMEOUT_MS),
         });
@@ -358,7 +360,7 @@ function generateHtml(analysis) {
       <div class="header-meta">
         <span class="badge badge-date">📅 ${dateDisplay}</span>
         <span class="badge badge-count">📊 ${totalCount} 篇文獻</span>
-        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
       </div>
     </div>
   </header>
@@ -406,10 +408,10 @@ function generateHtml(analysis) {
 async function main() {
   const inputArg = process.argv.find((a) => a.startsWith("--input="))?.split("=")[1];
   const outputArg = process.argv.find((a) => a.startsWith("--output="))?.split("=")[1];
-  const apiKey = process.env.ZHIPU_API_KEY;
+  const apiKey = process.env.NVIDIA_API_KEY;
 
   if (!apiKey) {
-    console.error("[ERROR] ZHIPU_API_KEY env var is required");
+    console.error("[ERROR] NVIDIA_API_KEY env var is required");
     process.exit(1);
   }
 
@@ -441,7 +443,7 @@ async function main() {
       topic_distribution: {},
     };
   } else {
-    analysis = await callZhipuAPI(apiKey, papersData);
+    analysis = await callNvidiaAPI(apiKey, papersData);
     if (!analysis) {
       console.error("[ERROR] All AI models failed");
       process.exit(1);
