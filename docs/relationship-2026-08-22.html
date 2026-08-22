@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Relationship Mind &middot; 關係與婚姻研究日報 &middot; 2026年8月22日</title>
+<meta name="description" content="2026年8月22日 關係與婚姻研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .footer-links { margin-top: 48px; animation: fadeUp 0.5s ease 0.4s both; }
+  .footer-link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); margin-bottom: 12px; }
+  .footer-link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .footer-icon { font-size: 28px; flex-shrink: 0; }
+  .footer-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .footer-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">💑</div>
+    <div class="header-text">
+      <h1>Relationship Mind &middot; 關係與婚姻研究日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年8月22日</span>
+        <span class="badge badge-count">📊 6 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於關係動態中的隱性議題，特別是雙方目標不一致（mixed-agenda）與後戲對女性性滿意度的影響，兼具理論創新與臨床應用價值，顯示關係研究正從行為觀察轉向神經生物與身體導向的整合模型。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div><div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#1</span>
+    <span class="emoji-icon">⚖️</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>混合議題伴侶：來自大規模資料集的洞見</h3>
+  <p class="journal-source">Journal of marital and family therapy &middot; Portraying Mixed-Agenda Couples: Insights From Large-Scale Data Sets.</p>
+  <p>研究發現混合議題伴侶（雙方在承諾與治療目標上有顯著差異）在非臨床樣本中佔約10%，臨床樣本中高達近40%，凸顯此為伴侶治療中的常見但常被忽視的議題，需針對雙向矛盾進行干預以提升治療效果。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">來自國家伴侶健康與時間研究（NCHAT）和婚姻家庭治療實務研究網路（MFT-PRN）的臨床與非臨床伴侶樣本</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（觀察性研究，透過資料集分類識別混合議題伴侶）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">非臨床樣本 vs 臨床樣本</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">混合議題動態在非臨床樣本中佔10%，臨床樣本中佔近40%，遠超先前臨床估計，證實許多尋求治療的伴侶實際抱有衝突動機。</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">婚姻滿意度</span><span class="tag">伴侶溝通</span><span class="tag">伴侶治療</span><span class="tag">成人依附</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42625433/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#2</span>
+    <span class="emoji-icon">💞</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>後戲在異性戀關係中對女性性滿意度的影響：前瞻性隨機對照研究</h3>
+  <p class="journal-source">International journal of impotence research &middot; Role of afterplay in female sexual satisfaction in heterosexual relationship: A prospective randomized two arm study.</p>
+  <p>接受額後戲教育的女性組在8週後顯著提升性滿意度（所有SSS-W領域），證實後戲是改善異性戀女性性福祉的簡單、有效且可推廣的伴侶導向介入。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">431位異性戀關係中的 sexually active 女性（排除合併症、精神疾病或診斷性功能障礙者），隨機分為兩組：A組（基礎性教育） vs B組（基礎教育+15分鐘後戲教育）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">每週一次、15分鐘的後戲教育（含擁抱、親吻、按摩、感官音樂等）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">僅接受標準性教育組 (A組)</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">8週後，B組在SSS-W所有領域顯著優於A組（p≤0.05），後戲教育顯著提升女性性滿意度。</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">性親密</span><span class="tag">伴侶教育</span><span class="tag">身體親密</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42624987/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#3</span>
+    <span class="emoji-icon">🧠</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>愛中心治療與第一故事循環：一種整合隱性關係激活與自律調節的雙人過程模型</h3>
+  <p class="journal-source">Journal of sex &amp; marital therapy &middot; Love-Centered Therapy and the First Story Cycle: A Dyadic Process Model of Implicit Relational Activation, Autonomic Co-Regulation, and Sexual Field Disruption.</p>
+  <p>提出愛中心療法（LCT）作為一種整合依附、身體心理、人際神經生物學與去殖民視角的過程模型，聚焦於幫伴侶以好奇而非評判面對學得的親密模式，促進自律與共調節以打破重複受挫互動循環。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">處於親密關係卡點、具備臨床介入適應性的伴侶（理論模型發展，基於臨床觀察）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">愛中心療法（LCT）：透過「第一故事」（學得親密模式）→「第一故事循環」（重複不滿互動）→「關係場」（由此產生的情感）三層架構進行介入</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組（理論與程序模型提出）</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">模型提供可操作框架：引導伴侶以好奇審視自身激活模式，負責調節自身狀態，從更穩定的生理狀態重新連結，以打破自動化的負面循環。</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">伴侶治療</span><span class="tag">情緒調節</span><span class="tag">共調節</span><span class="tag">成人依附</span><span class="tag">身體親密</span><span class="tag">神經生物學</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42627067/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#4</span>
+    <span class="emoji-icon">🔬</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>一種基於鈣鈦礦存儲二極管的類神經電路模擬模型，用於模擬糖尿病神經病變中的預測編碼失敗</h3>
+  <p class="journal-source">Neuroinformatics &middot; A Perovskite Memdiode-Based Neuromorphic in Silico Surrogate Model for Emulating Predictive Coding Failure in Diabetic Neuropathy.</p>
+  <p>提出一種基於鈣鈦礦memdiode的類神經電腦模型，成功模擬糖尿病周邊神經病變（DPN）中的四種臨床特徵（可塑性受損、穩態失敗、感覺遮斷、傳導延遲），並證明其在模擬神經病變進展中的穩健性，為理解身體狀態如何影響關係中的身體感知與共調節提供新視角。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">無（純電腦模擬模型）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">基於鈣鈦礦memdiode的類神經預測編碼架構，透過調整參數α模擬健康至重度DPN狀態</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">健康基線 (α=0) vs 中度DPN (α=0.5) vs 重度DPN (α≥0.8)</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">中度DPN導致持續升高變分自由能（VFE），類似於疼痛過敏；重度DPN導致穩態可塑性癱瘓，系統凍結於錯誤適應狀態，類似於感覺失調。模型對雜訊與參數擾動具高韌性。</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">神經生物學</span><span class="tag">生理同步</span><span class="tag">壓力與韌性</span><span class="tag">情緒調節</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42627467/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#5</span>
+    <span class="emoji-icon">🧬</span>
+    <span class="utility-low">低實用性</span>
+  </div>
+  <h3>社會一夫一妻制中的神經回路調校：雙形基礎，單形表現</h3>
+  <p class="journal-source">Progress in neurobiology &middot; Dimorphic Substrates, Monomorphic Outcomes: Social Behavior Neural Circuit Tuning in Social Monogamy.</p>
+  <p>解釋為何社會一夫一妻制物種（如草原鼠）在社會行為上看似無性別差異（單形），但實際上神經回路仍具性別二形性，只是經由雌激素、催產素、加壓素等神經調節物質在雌雄身上被「異樣調校」以產出收斂的行為（如共同照顧兒�、伴侶連結）。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">社會一夫一妻制哺乳類動物模型（主要參考草原鼠研究）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（理論綜合與機制討論）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">一夫多妻制 vs 社會一夫一妻制物種的神經行為機制</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">單形社會行為（如共同育雙、配對連結）可由兩種機制產生：(1) 神經回路性別二形性減少，或(2) 性別二形回路經雌雄異樣調校（神經調節物質濃度、受體表達）後產出相似行為。後者更具進化彈性。</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">神經生物學</span><span class="tag">催產素</span><span class="tag">共調節</span><span class="tag">身體親密</span><span class="tag">伴侶溝通</span><span class="tag">壓力與韌性</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42628779/" target="_blank">閱讀原文 →</a>
+  </div>
+</div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div><div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🐕</span>
+    <span class="utility-low utility-sm">低</span>
+  </div>
+  <h3>重新思考狗的壓力行為：來自依附框架的情境與生理見解</h3>
+  <p class="journal-source">The veterinary quarterly</p>
+  <p>研究發現狗常被用作壓力指標的行為（如舔唇、抖動、叫鳴）並非線性對應壓力水準，其意義高度依賴個體依附類型（安全/焦慮/迴避）與情境，例如安全型狗的舔唇與催產素正相關，焦慮型則負相關，顯示這些行為是情境解讀的訊號，而非生理應激的直接讀數。</p>
+  <div class="card-footer">
+    <span class="tag">依附焦慮</span><span class="tag">依附逃避</span><span class="tag">安全依附</span><span class="tag">壓力與韌性</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42627259/" target="_blank">PubMed →</a>
+  </div>
+</div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div><div class="topic-row">
+  <span class="topic-name">關係品質</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">4</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">伴侶溝通</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:75%"></div></div>
+  <span class="topic-count">3</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">性滿意度</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:25%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">成人依附</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:75%"></div></div>
+  <span class="topic-count">3</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">神經生物學</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">共調節</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:75%"></div></div>
+  <span class="topic-count">3</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">情緒調節</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">身體親密</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">伴侶治療</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">伴侶教育</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:25%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">壓力與韌性</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">催產素</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:25%"></div></div>
+  <span class="topic-count">1</span>
+</div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">混合議題伴侶</span><span class="keyword">後戲</span><span class="keyword">愛中心療法</span><span class="keyword">神經生物學模型</span><span class="keyword">社會一夫一妻制</span><span class="keyword">狗依附行為</span></div></div>
+
+  <div class="footer-links">
+    <a href="https://www.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">🏥</span>
+      <span class="footer-name">李政洋身心診所首頁</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">📬</span>
+      <span class="footer-name">訂閱電子報</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="footer-link-card" target="_blank">
+      <span class="footer-icon">☕</span>
+      <span class="footer-name">Buy Me a Coffee</span>
+      <span class="footer-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/relationship-mind">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
