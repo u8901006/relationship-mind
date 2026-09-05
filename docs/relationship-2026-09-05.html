@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Relationship Mind &middot; 關係與婚姻研究日報 &middot; 2026年9月5日</title>
+<meta name="description" content="2026年9月5日 關係與婚姻研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .footer-links { margin-top: 48px; animation: fadeUp 0.5s ease 0.4s both; }
+  .footer-link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); margin-bottom: 12px; }
+  .footer-link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .footer-icon { font-size: 28px; flex-shrink: 0; }
+  .footer-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .footer-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">💑</div>
+    <div class="header-text">
+      <h1>Relationship Mind &middot; 關係與婚姻研究日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年9月5日</span>
+        <span class="badge badge-count">📊 14 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於兒時創傷、依附型態與伴侶互動如何影響成人關係品質與性滿意度，顯示正念、伴侶回應性與自我擴展為關鍵保護因子，提供臨床干預的具體方向。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div><div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#1</span>
+    <span class="emoji-icon">👶💞</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>你真的不懂我：累積兒時人際創傷與產後性滿意度的關聯——伴侶感知回應性的中介作用</h3>
+  <p class="journal-source">Journal of sex research &middot; You Just Don't Get It: The Role of Perceived Partner Responsiveness in the Link Between Cumulative Childhood Interpersonal Trauma and Postpartum Sexual Satisfaction.</p>
+  <p>累積兒時人際創傷透過降低雙方伴侶感知回應性而間接降低產後性滿意度，強調雙人干預的必要性。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">473 對剛誕下子女的加拿大父母伴侶（母親與父親）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷面研究，測量累積兒時人際創傷、伴侶感知回應性與性滿意度）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">高 vs 低累積兒時人際創傷組</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">累積兒時人際創傷透過降低伴侶感知回應性，顯著預測較低的產後性滿意度（母親與父親皆成立）</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">創傷與依附</span><span class="tag">性滿意度</span><span class="tag">伴侶溝通</span><span class="tag">雙人因應</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41705540/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#2</span>
+    <span class="emoji-icon">🧠🔗</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>兒時心理虐待與戀愛關係滿意度：關係正念與情緒智力的鏈式中介作用</h3>
+  <p class="journal-source">Psychological reports &middot; Childhood Psychological Maltreatment and Romantic Relationship Satisfaction: The Roles of Relationship Mindfulness and Emotional Intelligence.</p>
+  <p>兒時心理虐待透過降低關係正念與情緒智力，間接降低戀愛關係滿意度，揭示兩個可干預的心理機制。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">459 名目前處於戀愛關係的土耳其個人（308 女，151 男）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷面研究，結構方程模型檢驗關係正念與情緒智力的中介作用）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">高 vs 低兒時心理虐待組</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">兒時心理虐待 → 降低關係正念 → 降低情緒智力 → 降低戀愛關係滿意度（鏈式中介皆顯著）</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">關係品質</span><span class="tag">情緒調節</span><span class="tag">正念</span><span class="tag">創傷與依附</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42696658/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#3</span>
+    <span class="emoji-icon">💔🛡️</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>依附不安全與婚姻不忠：心理路徑與臨床意涵</h3>
+  <p class="journal-source">Journal of sex & marital therapy &middot; Attachment Insecurity and Infidelity in Marriage: Psychological Pathways and Clinical Implications.</p>
+  <p>焦慮與迴避依附型態透過增加對不忠的接受度與降低婚姻滿滿度，促進婚姻不忠行為的發生。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">已婚夫婦（樣本數未詳細說明，但使用標準ised工具測量依附、滿意度、承諾與不忠態度）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷面相關研究）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">安全 vs 焦慮/迴避依附型態</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">焦慮與迴避依附型態正向預測不忠態度與行為；婚姻滿意度與承諾負向預測不忠；焦慮/迴避依附在心理變數與不忠間具有顯著中介作用</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">成人依附</span><span class="tag">依附焦慮</span><span class="tag">依附逃避</span><span class="tag">嫉妒與不忠</span><span class="tag">婚姻滿意度</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42695764/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#4</span>
+    <span class="emoji-icon">🌈🚀</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>自我擴展如何提升同性別跨種族伴侶的性慾與關係滿意度</h3>
+  <p class="journal-source">Journal of sex research &middot; The Influence of Self-Expansion on Sexual Desire Among People in Same-Gender Interracial Relationships.</p>
+  <p>在同性別跨種族伴侶中，透過與伴侶共同參與新穔活動的自我擴展，可顯著提升性慾、關係滿意度與性滿意度，緩解社會壓力的負面影響。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">205 人處於同性別跨種族關係的個體（預先註冊複製研究）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">自我擴展（與伴侶參與新穔活動） vs 無自我擴展</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">參與自我擴展組 vs 未參與組</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">參與自我擴展者報告較高的性慾、關係滿意度與性滿意度</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">關係品質</span><span class="tag">壓力與韌性</span><span class="tag">自我擴展</span><span class="tag">同性戀</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41511962/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#5</span>
+    <span class="emoji-icon">📱💬</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>青少年男同性戀伴侶的戀愛滿意度如何提升其性健康溝通自我效能</h3>
+  <p class="journal-source">Journal of sex research &middot; Romantic Relationship Satisfaction and Sexual Communication Self-Efficacy Among Partnered Adolescent Sexual Minority Males.</p>
+  <p>戀愛滿意度顯著正向預測青少年男性同性戀伴侶在性病史、避孕、避孕套談判及正負性訊息溝通上的自我效能，效應大小中等至大。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">50 名目前有伴侶的青少年男性同性戀者（MSM）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷面研究，測量戀愛滿意度與性健康溝通自我效能）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">高 vs 低戀愛滿意度組</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">戀愛滿意度與性病史、避孕、避孕套談判、正負性訊息溝通的自我效能顯著正相關（β 值中等至大）</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">伴侶溝通</span><span class="tag">關係品質</span><span class="tag">青少年</span><span class="tag">性少數</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41879635/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#6</span>
+    <span class="emoji-icon">💌🔥</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>緩衝性拒絕的刺痛：促進關係連結的具體溝通策略</h3>
+  <p class="journal-source">Journal of sex research &middot; Buffering the Sting of Sexual Rejection to Promote Relationship Connection.</p>
+  <p>讓伴侶以溫暖或表達未來性興趣的方式表達性拒絕（安慰式拒絕），能維持被拒絕者的性慾與理解，而非怨恨。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">315 個處於戀愛關係的個體（橫斷面） + 219 對伴侶（每日日記，9,287 天數據）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（觀察性研究，比較敵對式 vs 安慰式性拒絕溝通）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">感知為敵對式拒絕 vs 感知為安慰式拒絕</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">敵對式拒絕 → 增加被拒者怨恨；安慰式拒絕 → 增加理解、維持性慾</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">伴侶溝通</span><span class="tag">性滿意度</span><span class="tag">衝突修復</span><span class="tag">情感揭露</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41348462/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#7</span>
+    <span class="emoji-icon">🧘‍♀️💻</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>認知行為與正念線上介入對婦女低性慾功能障礙的改變機制：自我慈悲、反覆思考、身體連結與自我意識的部分中介作用</h3>
+  <p class="journal-source">Journal of sex research &middot; Mediators of Change in Cognitive Behavioral and Mindfulness-Based Online-Interventions for Hypoactive Sexual Desire Dysfunction in Women.</p>
+  <p>線上CBT與MBT對HSDD的改善，部分透過提升自我慈悲、降低反覆思考、增強身體連結與降低自我意識來中介，但效應量小（解釋變異 ≤15%）。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">212 名被診斷為HSDD的婦女（平均年齡36.3，隨機分派至線上CBT或MBT，8週引導式自助）</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">線上認知行為療法 (CBT) vs 線上正念療法 (MBT)</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">CBT組 vs MBT組（事後檢視中介路徑是否有系統差異）</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">自我慈悲、反覆思考、身體連結、自我意識的改善部分中介治療效果（於至少一組顯著），但無CBT與MBT在中介路徑上的顯著差異</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">情緒調節</span><span class="tag">正念</span><span class="tag">自我慈悲</span><span class="tag">線上治療</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41329214/" target="_blank">閱讀原文 →</a>
+  </div>
+</div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div><div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🧘‍♀️💻</span>
+    <span class="utility-mid utility-sm">中</span>
+  </div>
+  <h3>線上認知行為與正念介入對婦女低性慾功能障礙的改變機制</h3>
+  <p class="journal-source">Journal of sex research</p>
+  <p>線上CBT與MBT對HSDD的改善，部分透過提升自我慈悲、降低反覆思考、增強身體連結與降低自我意識來中介，但效應量小（解釋變異 ≤15%）。</p>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">情緒調節</span><span class="tag">正念</span><span class="tag">自我慈悲</span><span class="tag">線上治療</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41329214/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🌈🚀</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>同性別跨種族伴侶中的自我擴展如何提升性慾與關係滿意度</h3>
+  <p class="journal-source">Journal of sex research</p>
+  <p>在同性別跨種族伴侶中，透過與伴侶共同參與新穔活動的自我擴展，可顯著提升性慾、關係滿意度與性滿意度，緩解社會壓力的負面影響。</p>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">關係品質</span><span class="tag">壓力與韌性</span><span class="tag">自我擴展</span><span class="tag">同性戀</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41511962/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">💌🔥</span>
+    <span class="utility-mid utility-sm">中</span>
+  </div>
+  <h3>緩衝性拒絕的刺痛：促進關係連結的具體溝通策略</h3>
+  <p class="journal-source">Journal of sex research</p>
+  <p>讓伴侶以溫暖或表達未來性興趣的方式表達性拒絕（安慰式拒絕），能維持被拒絕者的性慾與理解，而非怨恨。</p>
+  <div class="card-footer">
+    <span class="tag">伴侶溝通</span><span class="tag">性滿意度</span><span class="tag">衝突修復</span><span class="tag">情感揭露</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41348462/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🧠🔗</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>兒時心理虐待與戀愛關係滿意度：關係正念與情緒智力的鏈式中介作用</h3>
+  <p class="journal-source">Psychological reports</p>
+  <p>兒時心理虐待透過降低關係正念與情緒智力，間接降低戀愛關係滿意度，揭示兩個可干預的心理機制。</p>
+  <div class="card-footer">
+    <span class="tag">關係品質</span><span class="tag">情緒調節</span><span class="tag">正念</span><span class="tag">創傷與依附</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42696658/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">💔🛡️</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>依附不安全與婚姻不忠：心理路徑與臨床意涵</h3>
+  <p class="journal-source">Journal of sex & marital therapy</p>
+  <p>焦慮與迴避依附型態透過增加對不忠的接受度與降低婚姻滿滿度，促進婚姻不忠行為的發生。</p>
+  <div class="card-footer">
+    <span class="tag">成人依附</span><span class="tag">依附焦慮</span><span class="tag">依附逃避</span><span class="tag">嫉妒與不忠</span><span class="tag">婚姻滿意度</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42695764/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">👶💞</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>你真的不懂我：累積兒時人際創傷與產後性滿意度的關聯——伴侶感知回應性的中介作用</h3>
+  <p class="journal-source">Journal of sex research</p>
+  <p>累積兒時人際創傷透過降低雙方伴侶感知回應性而間接降低產後性滿意度，強調雙人干預的必要性。</p>
+  <div class="card-footer">
+    <span class="tag">創傷與依附</span><span class="tag">性滿意度</span><span class="tag">伴侶溝通</span><span class="tag">雙人因應</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41705540/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">📱💬</span>
+    <span class="utility-mid utility-sm">中</span>
+  </div>
+  <h3>青少年男同性戀伴侶的戀愛滿意度如何提升其性健康溝通自我效能</h3>
+  <p class="journal-source">Journal of sex research</p>
+  <p>戀愛滿意度顯著正向預測青少年男性同性戀伴侶在性病史、避孕、避孕套談判及正負性訊息溝通上的自我效能，效應大小中等至大。</p>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">伴侶溝通</span><span class="tag">關係品質</span><span class="tag">青少年</span><span class="tag">性少數</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41879635/" target="_blank">PubMed →</a>
+  </div>
+</div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div><div class="topic-row">
+  <span class="topic-name">關係品質</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">6</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">性滿意度</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:83%"></div></div>
+  <span class="topic-count">5</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">伴侶溝通</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">4</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">創傷與依附</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">3</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">情緒調節</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">3</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">正念</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">依附焦慮</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">依附逃避</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">壓力與韌性</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">自我擴展</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">嫉妒與不忠</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">婚姻滿意度</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">衝突修復</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">情感揭露</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">自我慈悲</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">線上治療</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">青少年</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">性少數</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">同性戀</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+  <span class="topic-count">1</span>
+</div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">兒時創傷</span><span class="keyword">依附型態</span><span class="keyword">伴侶回應性</span><span class="keyword">正念</span><span class="keyword">自我擴展</span><span class="keyword">性滿意度</span><span class="keyword">關係品質</span></div></div>
+
+  <div class="footer-links">
+    <a href="https://www.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">🏥</span>
+      <span class="footer-name">李政洋身心診所首頁</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">📬</span>
+      <span class="footer-name">訂閱電子報</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="footer-link-card" target="_blank">
+      <span class="footer-icon">☕</span>
+      <span class="footer-name">Buy Me a Coffee</span>
+      <span class="footer-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/relationship-mind">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
