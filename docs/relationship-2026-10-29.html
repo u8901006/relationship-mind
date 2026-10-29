@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Relationship Mind &middot; 關係與婚姻研究日報 &middot; 2026年10月29日</title>
+<meta name="description" content="2026年10月29日 關係與婚姻研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .footer-links { margin-top: 48px; animation: fadeUp 0.5s ease 0.4s both; }
+  .footer-link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); margin-bottom: 12px; }
+  .footer-link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .footer-icon { font-size: 28px; flex-shrink: 0; }
+  .footer-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .footer-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">💑</div>
+    <div class="header-text">
+      <h1>Relationship Mind &middot; 關係與婚姻研究日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年10月29日</span>
+        <span class="badge badge-count">📊 12 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">本日文獻聚焦於情緒調節、伴侶溝通模式及多維關係韌性。研究涵蓋從衝突記憶的情緒處理、產後期間的回應行為、到自我擴展對社會污名的緩衝作用，揭示了情緒調節、溝通微行為及認知框架在關係品質中核心地位，特別是「如何回憶衝突」與「日常互動細節」對伴侶評估的獨特影響。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div><div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#1</span>
+    <span class="emoji-icon">🧠</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>情緒調節在伴侶衝突記憶中的作用：關係品質的雙向檢視</h3>
+  <p class="journal-source">Journal of family psychology : JFP : journal of the Division of Family Psychology of the American Psychological Association (Division 43) &middot; Emotion regulation in couples' conflict memories: A dyadic examination of relationship quality.</p>
+  <p>衝突記憶時使用整合性情緒調節與伴侶主觀關係品質正相關；情緒調節困難則與雙方的關係品質負相關，此效應獨立於一般情緒調節傾向與衝突強度之外，顯示回憶過程中的情緒處理是關係干預的關鍵目標。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">218 participants (109 couples)</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">回憶特定伴侶衝突並報告情緒調節策略</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">整合性情緒調節 vs. 調節困難（情緒不穩定）</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">自我與伴侶 perceived relationship quality</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">情緒調節</span><span class="tag">衝突修復</span><span class="tag">關係品質</span><span class="tag">雙人因應</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42932810/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#2</span>
+    <span class="emoji-icon">👂</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>口播回應與 HPA 軸調適：產後期間關係品質的語言與生理標記</h3>
+  <p class="journal-source">Biopsychosocial science and medicine &middot; Say Less! Backchanneling and HPA-axis Attunement, But Not Semantic Synchrony, Relate to Couples' Relationship Quality Across the Transition to Parenthood.</p>
+  <p>在產過渡期，口播回應（如「嗯嗯」「啊對」）而非語意同步，與伴侶的驗證與關係品質顯著相關；產後 HPA 軸調適對關係品質有邊際預測意義，揭示了簡單的口語回應是提升關係韌性的有效、低門檻介入點。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">100 expectant parent dyads</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">實驗室語言與皮質醇同步評估</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">口播回應 vs. 語意同步 vs. HPA 軸調適</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">伴侶關係品質</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">伴侶溝通</span><span class="tag">口播回應</span><span class="tag">關係品質</span><span class="tag">產後</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42911876/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#3</span>
+    <span class="emoji-icon">🌱</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>自我擴展緩衝社會污名：同性異種情侶的關係韌性</h3>
+  <p class="journal-source">Journal of homosexuality &middot; Approval Matters Less When the Self Expands: Self-Expansion as a Buffer Against Low Perceived Friend Approval in Same-Gender Interracial Relationships.</p>
+  <p>自我擴展干預顯著緩衝了朋友不批准對關係品質的負面影響；即使知覺到低朋友批准，進行新奇活動的情侶也報告較高的滿意度與承諾，證明成長導向的共同活動是對抗社會污名的心理資源。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">205 participants in same-gender interracial relationships</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">隨機分配至自我擴展條件或對照條件</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">自我擴展條件 vs. 對照條件</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">關係滿意度與承諾</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">自我擴展</span><span class="tag">關係韌性</span><span class="tag">社會污名</span><span class="tag">同性戀情侶</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42949707/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#4</span>
+    <span class="emoji-icon">💡</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>認知重構 vs. 情緒揭露：EFT 兩大模型在預測關係滿意度中的較研究</h3>
+  <p class="journal-source">Family process &middot; The Great EFT Schism: Testing Johnson's and Greenberg's Alternative Models of What Drives Couple Satisfaction.</p>
+  <p>研究比較了約翰遜的依附模型與綠伯格-골드曼的多動機模型；結果顯示「 perceived partner regard」（知覺到的伴侶敬意）是預測關係滿意度的最強預測因子，超越了依附與吸引力，意義在於臨床實務中應關注伴侶之間的敬意與認可。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">1090 individuals nested in 545 couples</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">量表測量（CSI-16, BARE, IAS, BLRI）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">依附模型 vs. 多動機模型</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">關係滿意度</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">關係品質</span><span class="tag">依附</span><span class="tag">敬意</span><span class="tag">吸引力</span><span class="tag">多模型</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42935019/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#5</span>
+    <span class="emoji-icon">🩺</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>伴侶雙人因應於乳腺癌患者與配偶：正向認知、溝通避免與心理困擾</h3>
+  <p class="journal-source">Patient preference and adherence &middot; Positive Metacognition, Family Avoidance of Cancer Communication, and Psychological Distress in Breast Cancer Patients and Their Spouses: A Longitudinal Actor-Partner Interdependence Model.</p>
+  <p>隨時間推移，正向認知增加而溝通避免與心理困擾降低；兩者雙向中介作用顯示正向認知透過降低溝通避免來保護雙方心理健康，伴侣間也存在顯著的心理困擾跨伴侣效應。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">265 patient-spouse dyads</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">三次時間點量測（術前、6週、12週）</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">正向認知 vs. 溝通避免 vs. 心理困擾</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">雙方心理困擾與關係功能</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">正向認知</span><span class="tag">溝通避免</span><span class="tag">伴侣间效應</span><span class="tag">慢性疾病</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42936792/" target="_blank">閱讀原文 →</a>
+  </div>
+</div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div><div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">💑</span>
+    <span class="utility-mid utility-sm">中</span>
+  </div>
+  <h3>更多而非僅僅是美好結局：高潮一致性在混合性戀關係中的角色</h3>
+  <p class="journal-source">Journal of sex research</p>
+  <p>高潮一致性與性滿足、關係滿足顯正相關，特別是男性；情感親密與女性相關。高潮差異與關係滿意度意外呈正相關，性別角色可能是關鍵因素。</p>
+  <div class="card-footer">
+    <span class="tag">性滿意度</span><span class="tag">情感親密</span><span class="tag">性差異</span><span class="tag">雙人因應</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42932261/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🧠</span>
+    <span class="utility-mid utility-sm">中</span>
+  </div>
+  <h3>注意力缺陷/過動症（ADHD）症狀與女性高潮一致性的關係</h3>
+  <p class="journal-source">Journal of sex research</p>
+  <p>ADHD症狀預測高潮一致性，特別是輕微型症狀與較低的一致性相關；藥物使用僅在非ADHD組顯著影響，結果對性健康與關係滿意度有重要啟示。</p>
+  <div class="card-footer">
+    <span class="tag">性健康</span><span class="tag">ADHD</span><span class="tag">女性性功能</span><span class="tag">情緒調節</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/40257106/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🏥</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>前列腺切除術伴侶的故事敘述</h3>
+  <p class="journal-source">Cancer nursing</p>
+  <p>伴侶經歷身體變化與情緒轉變，性親密受負面影響，情感親密卻得深化；強調了需要為伴侶提供性教育、諮商與預計時間線支持。</p>
+  <div class="card-footer">
+    <span class="tag">伴侶支援</span><span class="tag">癌症照護</span><span class="tag">情感親密</span><span class="tag">性親密</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/40460067/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🛋️</span>
+    <span class="utility-mid utility-sm">中</span>
+  </div>
+  <h3>在認知行療中改善情緒調節：童年逆境與依附探索</h3>
+  <p class="journal-source">Psychotherapy research : journal of the Society for Psychotherapy Research</p>
+  <p>情緒調節困難隨治療略有下降，童年逆境與依附焦慮預測 baseline 难度，僅回避型依附預測治療改善，提醒臨床工作者關注發展歷史以預測治療軌跡。</p>
+  <div class="card-footer">
+    <span class="tag">情緒調節</span><span class="tag">個體差異</span><span class="tag">伴侶治療</span><span class="tag">依附</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41126035/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🫂</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>共應對呼吸困難的恐懼：COPD 伴侶的 grounded theory</h3>
+  <p class="journal-source">International journal of chronic obstructive pulmonary disease</p>
+  <p>形成「被困在一起」或「共前行」兩種關係態樣，避免與支援不匹配會導致被困狀態，開啟溝通與角色重新協商是轉型的關鍵。</p>
+  <div class="card-footer">
+    <span class="tag">雙人因應</span><span class="tag">慢性疾病</span><span class="tag">共應對</span><span class="tag">恐懼</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42936193/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">👴</span>
+    <span class="utility-mid utility-sm">中</span>
+  </div>
+  <h3>韌性共同干預症 protocol：患有痴呆與其伴侶</h3>
+  <p class="journal-source">JMIR research protocols</p>
+  <p>旨在預防症後情緒困擾的雙人技能訓練方案，招募進度良好，有望證實對痴呆家庭的韌性建構。</p>
+  <div class="card-footer">
+    <span class="tag">雙人干預</span><span class="tag">痴呆</span><span class="tag">情緒困擾</span><span class="tag">關係韌性</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42944712/" target="_blank">PubMed →</a>
+  </div>
+</div>
+<div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">📊</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>關於 EFT 兩大模型的爭議：什麼驅動關係滿意度</h3>
+  <p class="journal-source">Family process</p>
+  <p>（與 rank 4 重複，略有不同標題強調點）比較約翰遜與綠伯格模型，認知重視程度是關鍵預測因子。</p>
+  <div class="card-footer">
+    <span class="tag">EFT</span><span class="tag">理論比較</span><span class="tag">關係滿意度</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42935019/" target="_blank">PubMed →</a>
+  </div>
+</div></div>
+
+  
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">關係品質</span><span class="keyword">情緒調節</span><span class="keyword">伴侶溝通</span><span class="keyword">衝突修復</span><span class="keyword">依附</span><span class="keyword">性滿意度</span><span class="keyword">雙人因應</span><span class="keyword">慢性疾病</span><span class="keyword">認知重構</span><span class="keyword">口播回應</span></div></div>
+
+  <div class="footer-links">
+    <a href="https://www.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">🏥</span>
+      <span class="footer-name">李政洋身心診所首頁</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">📬</span>
+      <span class="footer-name">訂閱電子報</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="footer-link-card" target="_blank">
+      <span class="footer-icon">☕</span>
+      <span class="footer-name">Buy Me a Coffee</span>
+      <span class="footer-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3.5-lightning-30b-a3b</span>
+    <span><a href="https://github.com/u8901006/relationship-mind">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
