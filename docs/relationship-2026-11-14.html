@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Relationship Mind &middot; 關係與婚姻研究日報 &middot; 2026年11月14日</title>
+<meta name="description" content="2026年11月14日 關係與婚姻研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .footer-links { margin-top: 48px; animation: fadeUp 0.5s ease 0.4s both; }
+  .footer-link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); margin-bottom: 12px; }
+  .footer-link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .footer-icon { font-size: 28px; flex-shrink: 0; }
+  .footer-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .footer-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">💑</div>
+    <div class="header-text">
+      <h1>Relationship Mind &middot; 關係與婚姻研究日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年11月14日</span>
+        <span class="badge badge-count">📊 6 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻集中在慢性疾病對關係的心理影響（如MRKHS綜合症）與生理感官在戀愛功能中的作用（如體臭與親密感）。雖然醫學領域的研究佔多數，但其中一篇關於伴侶體臭的研究提供了關於感官線索如何影響情緒與性親密的獨特見解，提醒臨床工作者關注非傳統的歸屬與連結機制。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div><div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#1</span>
+    <span class="emoji-icon">💑</span>
+    <span class="utility-mid">中實用性</span>
+  </div>
+  <h3>伴侶體臭與關係質素：關於思念與親密的感官研究</h3>
+  <p class="journal-source">Archives of sexual behavior &middot; Romantic Partner's Body Odor and Relationship Quality.</p>
+  <p>研究發現，對伴侶體臭的愉悅感受與性親密感顯著相關，這種「認知評估」在其他伴侶特質之上獨立預測了情緒與性親密的提升，提供了感官線索在增進關係質素中的新證據。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">206名具有戀愛關係的成年人</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">自然觀察（評估伴侶體臭}</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">控制其他伴侶特質</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">關於安全感、性興奮、情緒與性親密的感受</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">情緒調節</span><span class="tag">性親密</span><span class="tag">關係品質</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/43026436/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#2</span>
+    <span class="emoji-icon">🏥</span>
+    <span class="utility-high">高實用性</span>
+  </div>
+  <h3>MRKHS綜合症對心理與關係的影響：多視角研究</h3>
+  <p class="journal-source">The Australian & New Zealand journal of obstetrics & gynaecology &middot; The Psychological and Relational Impact of Mayer-Rokitansky-Kuster-Hauser Syndrome: Perspectives of Patients, Mothers and Partners.</p>
+  <p>MRKHS患者雖與對照組相比自 perceived health（自我感知健康）與 relationship satisfaction（關係滿意度）相近，但面臨顯著的焦慮提升、疼痛性交困難及家庭功能受損，個體認同受到深影響，呼籲臨床需提供量身調適的心理支持與開放溝通。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">MRKHS患者(23人)、其父母(8人)與伴侶(3人)</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">自然病程觀察（量身調適的心理支持}</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">參照驗證研究的對照數據</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">心理健康、家庭功能、生育相關質素、性功能與個體認同</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">關係品質</span><span class="tag">壓力與韌性</span><span class="tag">依附焦慮</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/43031245/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#3</span>
+    <span class="emoji-icon">🔬</span>
+    <span class="utility-low">低實用性</span>
+  </div>
+  <h3>對齒輪狀Ni-rich電極的環氧-醚交聯聚合物穩定劑</h3>
+  <p class="journal-source">Small &middot; A Multifunctional Epoxy-Polyether Network for Chemo-Mechanical Stabilization of High-Loading Ni-Rich Cathodes.</p>
+  <p>開發了一種氟自由的環氧-醚交聯聚合物結構，顯著提升了高負載Ni-rich電極的機械韌性與離子傳導能力，並在100個循環後保留80.98%容量，提供了能源儲存技術的新材料方案。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">Ni-rich cathode材料研究模型</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">環氧-醚交聯聚合物(X-EP) binder</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">傳統PVDF binder</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">容量保留率、機械韌性、離子導電率</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">科技創新</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/43031258/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#4</span>
+    <span class="emoji-icon">💧</span>
+    <span class="utility-low">低實用性</span>
+  </div>
+  <h3>動態碳意識多泵調度在水分配系統中的季節性儲存權衡</h3>
+  <p class="journal-source">Water research &middot; Dynamic carbon aware multi-pump scheduling in water distribution systems: Carbon-pressure margin trade-offs under seasonal storage conditions.</p>
+  <p>提出一種結合動態電網碳強度與季節性水儲存條件的多泵調度架構，在特定情境下平衡碳排放與水壓彈性，展現了城市基礎設施碳中和路徑的優化潛力。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">水分配系統(WDS)運作模型</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">動態碳意識多泵調度(LASEO-SE)</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">能量最小化對照</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">碳排放量與修正彈性指數(MRI)</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">科技應用</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/43025068/" target="_blank">閱讀原文 →</a>
+  </div>
+</div>
+<div class="news-card featured">
+  <div class="card-header">
+    <span class="rank-badge">#5</span>
+    <span class="emoji-icon">🧬</span>
+    <span class="utility-low">低實用性</span>
+  </div>
+  <h3>多巴醯功能化對準直式聚乳酸微纖維之神經細胞互作與氧化壓力緩解</h3>
+  <p class="journal-source">ACS omega &middot; Polydopamine Functionalization of Aligned Polylactic Acid Microfibers for Enhanced Neural Cell Interaction and Oxidative Stress Mitigation.</p>
+  <p>通過一步沉浸法將多巴醯修飾於對準式PLA微纖維，增強Schwann細胞附著與神經突起沿著纖維軸向生長，並顯著提升細胞對氧化應激的耐受性，提供了神經修復生物材料的新思路。</p>
+  <div class="pico-grid">
+  <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">神經細胞(Schwann cells, dorsal root ganglion)文化模型</span></div>
+  <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">多巴醯功能化PLA微纖維</span></div>
+  <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未修飾PLA微纖維</span></div>
+  <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">細胞附著、神經突起生長、氧化壓力耐受度</span></div>
+</div>
+  <div class="card-footer">
+    <span class="tag">科技創新</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/43022609/" target="_blank">閱讀原文 →</a>
+  </div>
+</div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div><div class="news-card">
+  <div class="card-header-row">
+    <span class="emoji-sm">🏥</span>
+    <span class="utility-high utility-sm">高</span>
+  </div>
+  <h3>MRKHS綜合症對心理與關係的影響：多視角研究</h3>
+  <p class="journal-source">The Australian & New Zealand journal of obstetrics & gynaecology</p>
+  <p>MRKHS患者雖與對照組相比自 perceived health 與 relationship satisfaction 相近，但面臨顯著的焦慮提升、疼痛性交困難及家庭功能受損，個體認同受到深影響，呼籲臨床需提供量身調適的心理支持與開放溝通。</p>
+  <div class="card-footer">
+    <span class="tag">關係品質</span><span class="tag">壓力與韌性</span><span class="tag">依附焦慮</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/43031245/" target="_blank">PubMed →</a>
+  </div>
+</div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div><div class="topic-row">
+  <span class="topic-name">關係品質</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div>
+<div class="topic-row">
+  <span class="topic-name">伴侶溝通</span>
+  <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">關係品質</span><span class="keyword">伴侶溝通</span><span class="keyword">性親密</span><span class="keyword">壓力與韌性</span><span class="keyword">依附焦慮</span></div></div>
+
+  <div class="footer-links">
+    <a href="https://www.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">🏥</span>
+      <span class="footer-name">李政洋身心診所首頁</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="footer-link-card" target="_blank">
+      <span class="footer-icon">📬</span>
+      <span class="footer-name">訂閱電子報</span>
+      <span class="footer-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="footer-link-card" target="_blank">
+      <span class="footer-icon">☕</span>
+      <span class="footer-name">Buy Me a Coffee</span>
+      <span class="footer-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3.5-lightning-30b-a3b</span>
+    <span><a href="https://github.com/u8901006/relationship-mind">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
